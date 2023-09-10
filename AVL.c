@@ -9,10 +9,11 @@ pNodoAVL* CriaArvoreAVL(void)
     return NULL;
 }
 
-pNodoAVL* ConsultaAVL(pNodoAVL *a, char palavra[50])
+pNodoAVL* ConsultaAVL(pNodoAVL *a, char palavra[50], int* numeroComparacoes)
 {
     while (a!=NULL)
     {
+        (*numeroComparacoes)++;
         if (strcmp(a->info, palavra) == 0)
             return a; //achou retorna o ponteiro para o nodo
         else if (strcmp(a->info, palavra) > 0)
